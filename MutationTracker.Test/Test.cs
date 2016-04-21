@@ -66,9 +66,12 @@ namespace MutationTracker.Test
                 StringFieldBase = null,
             };
 
+            o.Track();
+            Assert.IsFalse(o.IsModified);
+
             o.IntPropertyBase = 2 + 2;
             Assert.IsFalse(o.IsModified); // private [backing] fields of the base class are not tracked
-            o.IntPropertyBase = 2 + 3;
+            o.IntPropertyBase = 5;
             Assert.IsFalse(o.IsModified);
 
             o.StringFieldBase = "AS";
