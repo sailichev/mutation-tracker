@@ -1,6 +1,6 @@
 {
   "name": "mutation-tracker",
   "tagline": ".net object value instance edit change modify track monitor spy",
-  "body": "This tool is for one to be able to check an object for presence of instance field modifications.",
+  "body": "# Mutation Tacker\r\n\r\nThis lightwieght library provides an easy way to check an object for fields modifications at any time.\r\n\r\nIt does add a single method to any object;\r\n```csharp\r\npublic static Func<bool> TrackFields(this object @this);\r\n```\r\n\r\nYou can check then if there are any field values changed by calling the returned function anytime.\r\n\r\n### See [sample code](https://github.com/sailichev/mutation-tracker/blob/master/MutationTracker.Test/Sample.cs).\r\n\r\n---\r\n\r\nLimitations:\r\n\r\n * A field must be\r\n    * value type implementing ```IEquitable<>```\r\n    * immutable reference type (that is, changing a member field value spawns a new instance)\r\n    * string\r\n * Parent object private fields are not tracked",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
